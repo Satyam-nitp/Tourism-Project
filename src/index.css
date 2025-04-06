@@ -324,7 +324,7 @@ body::-webkit-scrollbar {
 } */
 
 .active{
-  color: red;
+  color: rgb(15, 245, 15);
 }
 
 
@@ -467,3 +467,8 @@ body::-webkit-scrollbar {
   margin-bottom: 1rem;
   border-radius: 1rem;
 }
+
+/* backgroundImage: `url('/path/to/background.jpg')`,
+backgroundSize: 'cover',
+backgroundPosition: 'center',
+backdropFilter: 'blur(4px)', */

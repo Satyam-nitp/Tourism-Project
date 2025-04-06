@@ -23,7 +23,7 @@ function Vrindavan() {
     }
 
   return (
-    <div className="App mt-[70px]">
+    <div className="App mt-[70px] ">
       <div className='AppCon'>
         <h2 className='heading'>वृंदावन धाम</h2>
         <img className='more' src={more} alt='ggg'></img>
