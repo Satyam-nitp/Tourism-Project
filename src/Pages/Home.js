@@ -1,11 +1,34 @@
-import React from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-function Home() {
+const Home = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className='text-[5rem] mt-[100px] text-center text-white'>
-      hello welcome
+    <div className="h-screen w-full bg-gradient-to-b from-[#2c1c1c] to-[#1e0f0f] flex flex-col items-center justify-center text-white px-4 text-center">
+      <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-pulse">
+        Welcome to Spiritual India 🌸
+      </h1>
+      <p className="text-xl md:text-2xl mb-10 max-w-2xl text-gray-300">
+        Discover the sacred temples, serene landscapes, and timeless legends of
+        Vrindavan & Uttarakhand.
+      </p>
+      <div className="flex gap-6">
+        <button
+          onClick={() => navigate("/vrindavan")}
+          className="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-full text-lg transition duration-300"
+        >
+          Explore Vrindavan
+        </button>
+        <button
+          onClick={() => navigate("/uttarakhand")}
+          className="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-full text-lg transition duration-300"
+        >
+          Explore Uttarakhand
+        </button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
