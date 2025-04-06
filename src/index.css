@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +8,462 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #392727;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&family=Mulish:ital@1&family=Poppins&family=Raleway&family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100%;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.App {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #d9d9d9;
+  /* background-image: url(./vr.jpg); */
+  background-size: cover;
+}
+
+.AppCon{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  width: 100%;
+  /* border: 1px solid black; */
+  margin: 0 auto;
+  background-color: #392727;
+  backdrop-filter: blur(2.5px);
+  height: 100%;
+  position: relative;
+  color: white;
+  z-index: 1;
+}
+/* .AppCon::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: -1;
+} */
+.more{
+  width: 100px;
+  height: 100px;
+  /* object-fit: cover; */
+  position: absolute;
+  top: 20px;
+  left: 500px;
+  z-index: -2;
+  opacity: 0.5;
+}
+.more2{
+  width: 100px;
+  height: 100px;
+  /* object-fit: cover; */
+  position: absolute;
+  top: 20px;
+  right: 500px;
+  z-index: -2;
+  opacity: 0.5;
+}
+.radha{
+  position: absolute;
+  top: -50px;
+  width: 150px;
+  height: 150px;
+}
+.AppCon p{
+  font-size: 1.5rem;
+  margin: 0.25rem 0;
+  z-index: 1;
+}
+
+.heading {
+  font-size: 2rem;
+  border: 2px solid #fff;
+  border-radius: 8rem;
+  padding: 0.25rem 2rem;
+  margin: 3.5rem 0;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 500ms ease-in-out;
+}
+
+.heading:hover{
+  color: black;
+  border: 2px solid black;
+}
+
+.heading::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgb(234, 50, 50);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  /* opacity: 0; */
+  z-index: -1;
+  border-radius: 50%;
+  transition: all 500ms ease-in-out;
+  /* animation: move 2s ease infinite alternate; */
+}
+/* @keyframes move {
+  0%{
+    top: 100%;
+    opacity: 0;
+  }
+  100%{
+    top: 0;
+    opacity: 1;
+    border-radius: 0;
+  }
+  
+} */
+
+.heading:hover::after{
+  opacity: 1;
+  top: 0;
+  border-radius: 0;
+}
+
+.place{
+  width: 1300px;
+  /* border: 1px solid black; */
+  margin: 0 auto;
+  z-index: 1;
+  padding: 2rem 2rem;
+  border-bottom: 3px solid #fff;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.placeHeading{
+  text-align: center;
+  font-size: 2.5rem;
+  /* margin-bottom: 2rem; */
+} 
+
+.placePara{
+  text-align: justify;
+}
+
+.placeList{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.placeList li{
+  list-style: none;
+  width: 250px;
+  background-color: #00000080;
+  padding: 0.5rem 0.25rem;
+  border-radius: 0.25rem;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.24);
+  transition: all 0.5s;
+  text-align: center;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: 1px solid rgba(255, 0, 0, 0.25);
+}
+
+.all, .fav{
+  color: red;
+  font-weight: bold;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 0.25rem;
+  border-radius: 0.25rem;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.24);
+  border: 1px solid rgba(255, 0, 0, 0.25);
+  transition: all 0.5s;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.card {
+  max-width: 1400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* align-items: center; */
+  /* border-top: 3px solid #fff; */
+  margin-top: 1rem;
+  gap: 1rem;
+  padding: 3rem;
+}
+.card h2{
+  font-size: 1rem;
+  color: red;
+  border-bottom: 2px solid red;
+  padding: 0 1rem;
+}
+.card p{
+  font-size: 0.75rem;
+  text-align: justify;
+  margin: 0.25rem 0.75rem;
+}
+
+.temple-section {
+  width: 400px;
+  height: max-content;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+.heart{
+  position: absolute;
+  top: 5px;
+  right: 22px;
+  font-size: 2rem;
+  color: #ff00003d;
+  cursor: pointer;
+  z-index: 20;
+}
+.heart::after{
+  content: "Add to Favourites";
+  position: absolute;
+  font-size: 0.6rem;
+  top: 38px;
+  background-color: #4f2424;
+  z-index: -1;
+  right: -15px;
+  line-height: 0.6rem;
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  color: white;
+  border-radius: 0.25rem;
+  transform-origin: top;
+  transform: scale(0);
+  transition: all 250ms ease-in-out;
+  opacity: 0;
+}
+
+.heart:hover::after{
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.scrollable-div {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  white-space: nowrap;
+  border: 1px solid #ccc;
+  height: 320px;
+  width: 320px;
+  scroll-behavior: smooth;
+}
+.scrollable-div::-webkit-scrollbar {
+  display: none;
+}
+
+.photo {
+  width: 350px;
+  height: 350px;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.readMore{
+  cursor: pointer;
+  color: red;
+  font-size: 0.75rem;
+}
+
+/* .hover{
+  position: relative;
+}
+.hover::after{
+  content: '';
+  position: absolute;
+  color: red;
+  top: 50%;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border: 5px solid green;
+  z-index: 10;
+} */
+
+.active{
+  color: red;
+}
+
+
+.slider::-webkit-scrollbar{
+  display: none;
+}
+
+.background, .shadow{
+  box-shadow: 0 0 5px #1111113d;
+}
+
+.hover{
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 800ms ease;
+}
+.hover::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  top: 100%;
+  left: 0;
+  border-radius: 50%;
+  transition: all 800ms ease;
+  z-index: -1;
+}
+
+.hover:hover::after{
+  top: 0;
+  border-radius: 0;
+}
+.hover:hover{
+  color: black;
+  border-color: #111;
+}
+
+
+.show::after{
+  content: 'Add to fav';
+  position: absolute;
+  padding: 0.15rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  top: 105%;
+  left: -12.5px;
+  border-radius: 0.25rem;
+  font-size: 0.55rem;
+  background-color: #111;
+  border: 1px solid #ffffff61;
+  transform-origin: top;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 250ms ease;
+}
+
+.show:hover::after{
+  transform: scale(1);
+  opacity: 1;
+}
+
+
+.hide::after{
+  content: 'Remove from fav';
+  position: absolute;
+  padding: 0.15rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  top: 105%;
+  left: -25.5px;
+  border-radius: 0.25rem;
+  font-size: 0.5rem;
+  background-color: #111;
+  border: 1px solid #ffffff61;
+  transform-origin: top;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 250ms ease;
+}
+
+.hide:hover::after{
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* 'text-[0.8rem] rounded-md text-white bg-black absolute bottom-[80px] px-4 py-2' */
+/* .placeClass{
+  position: absolute;
+  transform-origin: bottom;
+  animation: bottomMove 2s ease infinite;
+  background-color: #111;
+}
+
+@keyframes bottomMove {
+  100%{
+    transform: scale(0);
+  }
+} */
+
+
+
+
+/* .hidden button{
+  transform: scale(0);
+} */
+
+/* w-[1200px] h-[20px] border-2 border-solid border-red-50 relative p-4 overflow-hidden */
+.hiddenn{
+  height: 50px;
+  width: 1100px;
+  border: 1px solid rgba(255, 255, 255, 0.275);
+  position: relative;
+  padding: 1rem;
+  overflow: hidden;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+}
+.hiddenn button{
+  display: none;
+}
+
+/* flex gap-2 max-w-[1200px] flex-wrap justify-center items-center relative border-2 border-solid border-red-50 p-4 mb-4 */
+
+.shownn{
+  display: flex;
+  gap: 0.5rem;
+  max-width: 1100px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.275);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
 }
